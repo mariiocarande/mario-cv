@@ -8,7 +8,12 @@ const Home: React.FC = () => {
     return (
       <Flex>
           <Flex alignItems="center" background={colorMode} direction="column" p={12} rounded={6}>
-            <Heading as="h2" mb="5" isTruncated size="3xl">
+            <Heading 
+              isTruncated 
+              as="h2"
+              mb="5" 
+              size="3xl"
+            >
               Hi welcome! 
             </Heading>
             <Image
