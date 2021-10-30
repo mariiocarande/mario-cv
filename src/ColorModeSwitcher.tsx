@@ -11,7 +11,7 @@ type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
 
 export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
   const { toggleColorMode } = useColorMode();
-  const colorMode = useColorModeValue("gray.500", "gray.700");
+  const colorMode = useColorModeValue("gray.800", "gray.1000");
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
   return (
