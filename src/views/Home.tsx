@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { FaTwitter, FaTwitch, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { Button, Box, Flex, Heading, HStack, Image, useColorModeValue, Link } from '@chakra-ui/react';
 
 const Home: React.FC = () => {
     const colorMode = useColorModeValue("gray.300", "gray.700");
+    const renderButton = (color: string, icon: ReactElement, socialMediaText: string, url: string) => (
+      <Link isExternal href={url} style={{textDecoration : 'none'}}>
+        <Button colorScheme={color} leftIcon={icon}>
+          {socialMediaText}
+        </Button>
+      </Link>
+    );
 
     return (
       <Flex>
@@ -29,29 +36,10 @@ const Home: React.FC = () => {
                 I've been working with Nimble.la for 2 years.`}
             </Box>
             <HStack>
-              <Button colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
-                <Link isExternal href="https://bit.ly/3GxMld5">
-                  LinkedIn
-                </Link>
-              </Button>
-
-              <Button colorScheme="messenger" leftIcon={<FaGithub />}>
-                <Link isExternal href="https://bit.ly/3w5aFhx">
-                  Github
-                </Link>
-              </Button>
-
-              <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-                <Link isExternal href="https://bit.ly/3bmBwMD">
-                  Twitter
-                </Link>
-              </Button>
-
-              <Button colorScheme="purple" leftIcon={<FaTwitch />}>
-                <Link isExternal href="https://bit.ly/3GCFkYe">
-                  Twitch
-                </Link>
-              </Button>
+              {renderButton("linkedin",<FaLinkedinIn />,"LinkedIn","https://bit.ly/3GxMld5")}
+              {renderButton("messenger",<FaGithub />,"Github","https://bit.ly/3w5aFhx")}
+              {renderButton("twitter",<FaTwitter />,"Twitter","https://bit.ly/3bmBwMD")}
+              {renderButton("purple",<FaTwitch />,"Twitch","https://bit.ly/3GCFkYe")}
             </HStack>
           </Flex>
       </Flex>
