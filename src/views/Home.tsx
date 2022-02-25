@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import { FaTwitter, FaTwitch, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { Button, Box, Flex, Heading, HStack, Image, useColorModeValue, Link } from '@chakra-ui/react';
 
+import profilePicture from '../assets/img/profile-picture.jpg';
+
 const Home: React.FC = () => {
     const colorMode = useColorModeValue("gray.300", "gray.700");
     const renderButton = (color: string, icon: ReactElement, socialMediaText: string, url: string) => (
@@ -24,11 +26,11 @@ const Home: React.FC = () => {
               Hi welcome! 
             </Heading>
             <Image
-              alt="Mario Carande Scarafía"
+              alt="profilePicture"
               borderRadius="full"
               boxSize="150px"
               marginBottom="30px"
-              src="https://bit.ly/3bv0Dwx"
+              src={profilePicture}
             />
             <Box h="180px" w="450px">
               {`I'm Mario Carande Scarafía I'm a front-end developer actually working with ReactJS.\n
